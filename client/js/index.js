@@ -52,6 +52,17 @@ $(document).ready(function() {
                                 $('#mtnElev').html(parseInt(mountain.elevation).format());
                                 $('#mtnDiff').html(mountain.effort);
                                 $('#mtnDesc').html(mountain.desc);
+                                
+                                let summited;
+                                if (mountain.summ === true)
+                                {
+                                    summited = "I have summited this mountain."
+                                }
+                                else 
+                                {
+                                    summited = "I have not summited this mountain."
+                                }
+                                $("#mtnSumm").html(summited);
 
                                 // Show Div
                                 $('#mtnDiv').removeClass('hidden');

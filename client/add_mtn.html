@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>NH 4k</title>
     <link rel="icon" href="img/favicon.ico" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+        integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous" />
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
     <link rel="stylesheet" href="css/narrow-jumbotron.css" />
     <link rel="stylesheet" href="css/styles.css" />
@@ -22,8 +23,8 @@
                 <ul class="nav nav-pills float-right">
                     <li class="nav-item">
                         <a class="nav-link" id="indexPage" href="index.html">Home
-                <span class="sr-only">(current)</span>
-              </a>
+                            <span class="sr-only">(current)</span>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="albumPage" href="album.html">Album</a>
@@ -70,27 +71,30 @@
                 <form id="mtnForm">
                     <div class="form-group">
                         <label for="mtnName">Name</label>
-                        <input type="text" class="form-control" name="mtnName" id="mtnName" placeholder="Mt. Washington" required autofocus />
+                        <input type="text" class="form-control" name="mtnName" id="mtnName" placeholder="Mt. Washington"
+                            required autofocus />
                     </div>
 
                     <div class="form-group">
                         <label for="mtnElevation">Elevation (in feet)</label>
-                        <input type="number" class="form-control" name="mtnElevation" id="mtnElevation" placeholder="6288" required />
+                        <input type="number" class="form-control" name="mtnElevation" id="mtnElevation"
+                            placeholder="6288" required />
                     </div>
 
                     <div class="form-group">
                         <label for="mtnEffort">Effort</label>
                         <select class="form-control" name="mtnEffort" id="mtnEffort">
-                <option value="">Select</option>
-                <option value="Strenuous">Strenuous</option>
-                <option value="Moderate">Moderate</option>
-                <option value="Moderate to Strenuous">Moderate to Strenuous</option>
-              </select>
+                            <option value="">Select</option>
+                            <option value="Strenuous">Strenuous</option>
+                            <option value="Moderate">Moderate</option>
+                            <option value="Moderate to Strenuous">Moderate to Strenuous</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
                         <label for="mtnImage">Image</label>
-                        <input type="text" class="form-control" name="mtnImage" id="mtnImage" placeholder="Washington-StoryImage_2.jpg" />
+                        <input type="text" class="form-control" name="mtnImage" id="mtnImage"
+                            placeholder="Washington-StoryImage_2.jpg" />
                         <div class="form-check hidden" id="mtnImagePreviewDiv">
                             <input class="form-check-input" type="checkbox" value="" id="mtnImagePreview" />
                             <label class="form-check-label" for="mtnImagePreview">Preview</label>
@@ -107,13 +111,19 @@
                         <div class="row">
                             <div class="col">
                                 <label for="mtnLat">Lat</label>
-                                <input type="text" class="form-control" name="mtnLat" id="mtnLat" placeholder="44.270403" required />
+                                <input type="text" class="form-control" name="mtnLat" id="mtnLat"
+                                    placeholder="44.270403" required />
                             </div>
                             <div class="col">
                                 <label for="mtnLat">Lng</label>
-                                <input type="text" class="form-control" name="mtnLng" id="mtnLng" placeholder="-71.303501" required />
+                                <input type="text" class="form-control" name="mtnLng" id="mtnLng"
+                                    placeholder="-71.303501" required />
                             </div>
                         </div>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="mtnSumm" value="">
+                        <label class="form-check-label" for="mtnSumm">Summited?</label>
                     </div>
 
                     <div class="form-group text-right">
@@ -137,9 +147,14 @@
         </footer>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
+        integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+        crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
     <script src="js/add_mtn.js"></script>
 </body>

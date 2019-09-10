@@ -1,12 +1,15 @@
 // add_mtn.js
 
-$(document).ready(function() {
+$(document).ready(function ()
+{
     setActivePage('add_mtn');
 
     // Note: The following could be bound to onChange / onBlur element EventHandlers -vs- onSubmit of Form
-    function processForm() {
+    function processForm()
+    {
         // validate elevation
-        if ($('#mtnElevation').val() < 4003 || $('#mtnElevation').val() > 6288) {
+        if ($('#mtnElevation').val() < 4003 || $('#mtnElevation').val() > 6288)
+        {
             $('#alertMsg').html('Elevation must be between 4,003 and 6,288 feet.');
             $('#mtnElevation').focus();
             $('#alertMsg').show();
@@ -14,7 +17,8 @@ $(document).ready(function() {
         }
 
         // validate effort
-        if ($('#mtnEffort').val() === '') {
+        if ($('#mtnEffort').val() === '')
+        {
             $('#alertMsg').html('Please select an effort.');
             $('#mtnEffort').focus();
             $('#alertMsg').show();
@@ -22,7 +26,8 @@ $(document).ready(function() {
         }
 
         // validate image
-        if ($('#mtnImage').val() === '') {
+        if ($('#mtnImage').val() === '')
+        {
             $('#alertMsg').html('Please enter an image name.');
             $('#mtnImage').focus();
             $('#alertMsg').show();
@@ -33,7 +38,8 @@ $(document).ready(function() {
         // Note: Can break into Lat and Lgn checks, and place cursor as needed
         var regex = /^([-+]?)([\d]{1,2})(((\.)(\d+)(,)))(\s*)(([-+]?)([\d]{1,3})((\.)(\d+))?)$/;
         var latLng = `${$('#mtnLat').val()},${$('#mtnLng').val()}`;
-        if (!regex.test(latLng)) {
+        if (!regex.test(latLng))
+        {
             $('#alertMsg').html('Latitude and Longitude must be numeric.');
             $('#alertMsg').show();
             return false;
@@ -47,7 +53,8 @@ $(document).ready(function() {
     }
 
     // Submit the form - AJAX to Node
-    function submitForm() {
+    function submitForm()
+    {
         let data = {
             "mtnName": $('#mtnName').val(),
             "mtnElevation": $('#mtnElevation').val(),
@@ -55,11 +62,13 @@ $(document).ready(function() {
             "mtnImage": $('#mtnImage').val(),
             "mtnDesc": $('#mtnDesc').val(),
             "mtnLat": $('#mtnLat').val(),
-            "mtnLng": $('#mtnLng').val()
+            "mtnLng": $('#mtnLng').val(),
+            "mtnSumm": $("#mtnSumm").val()
         };
 
-        $.post("http://localhost:3000/mountain", JSON.stringify(data), function() {})
-            .done(function() {
+        $.post("http://localhost:3000/mountain", JSON.stringify(data), function () { })
+            .done(function ()
+            {
                 $('#alertMsg').html('');
                 $('#alertMsg').hide();
 
@@ -68,56 +77,69 @@ $(document).ready(function() {
                 // TBD: remove alert and disp using jQuery fade() methods
                 alert('Mountain added.');
             })
-            .fail(function(e) {
-                if (e.status === 403) {
+            .fail(function (e)
+            {
+                if (e.status === 403)
+                {
                     $('#alertMsg').html(`Mountain not created. ${$('#mtnName').val()} already exists.`);
-                } else {
+                } else
+                {
                     $('#alertMsg').html('Error: Unable to connect to server.');
                 }
                 $('#alertMsg').show();
             })
     }
 
-    function resetImg() {
+    function resetImg()
+    {
         $('#mtnImagePreviewDiv').hide();
         $('#mtnImg').attr("src", '');
         $('#mtnImg').hide();
     }
 
     // Bind EventHandlers
-    $('#mtnImage').on('blur', () => {
+    $('#mtnImage').on('blur', () =>
+    {
         let url = $('#mtnImage').val();
 
-        if (url !== '') {
+        if (url !== '')
+        {
             $('#mtnImagePreviewDiv').show();
-        } else {
+        } else
+        {
             $('#mtnImagePreview').prop('checked', false);
             $('#mtnImagePreviewDiv').hide();
             resetImg();
         }
     });
 
-    $('#mtnImagePreview').on('change', () => {
-        if ($('#mtnImagePreview').prop('checked')) {
+    $('#mtnImagePreview').on('change', () =>
+    {
+        if ($('#mtnImagePreview').prop('checked'))
+        {
             let imgSrcUrlPrefix = 'img/';
             let imgSrcUrl = imgSrcUrlPrefix + $('#mtnImage').val();
             $('#mtnImg').attr("src", imgSrcUrl);
             $('#mtnImg').show();
-        } else {
+        } else
+        {
             resetImg();
         }
     });
 
-    $('#resetBtn').on('click', () => {
+    $('#resetBtn').on('click', () =>
+    {
         resetImg();
         $('#alertMsg').html('');
         $('#alertMsg').hide();
         $('#mtnName').focus();
     });
 
-    $('#mtnForm').on('submit', (e) => {
+    $('#mtnForm').on('submit', (e) =>
+    {
         e.preventDefault();
-        if (processForm()) {
+        if (processForm())
+        {
             submitForm();
         }
     });
